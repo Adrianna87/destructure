@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring exercises</title>
+</head>
+<body>
+<h1>Destructuring Exercises</h1>
+<h2>Object Destructuring</h2>
+<b>What does the following code return/print?</b>
+<br><br>
+let facts = {numPlanets: 8, yearNeptuneDiscovered: 1846};<br>
+let {numPlanets, yearNeptuneDiscovered} = facts;
+<br><br>
+console.log(numPlanets); // 8<br>
+console.log(yearNeptuneDiscovered); // 1846
+<br><br>
+<b>What does the following code return/print?</b>
+<br><br>
+let planetFacts = {<br>
+  numPlanets: 8,<br>
+  yearNeptuneDiscovered: 1846,<br>
+  yearMarsDiscovered: 1659<br>
+};
+<br><br>
+let {numPlanets, ...discoveryYears} = planetFacts;
+<br><br>
+console.log(discoveryYears); // {yearNeptuneDiscovered: 1846, yearMarsDiscovered: 1659}
+<br><br>
+<b>What does the following code return/print?</b>
+<br><br>
+function getUserData({firstName, favoriteColor="green"}){<br>
+  return `Your name is ${firstName} and you like ${favoriteColor}`;<br>
+}
+<br><br>
+getUserData({firstName: "Alejandro", favoriteColor: "purple"}) // Your name is Alejandro and you like purple<br>
+getUserData({firstName: "Melissa"}) // Your name is Melissa and you like green<br>
+getUserData({}) // Your name is undefined and you like green
+<br><br>
+<h2>Array Destructuring</h2>
+<b>What does the following code return/print?</b>
+<br><br>
+let [first, second, third] = ["Maya", "Marisa", "Chi"];
+<br><br>
+console.log(first); // Maya<br>
+console.log(second); // Marisa<br>
+console.log(third); // Chi<br>
+<br><br>
+<b>What does the following code return/print?</b>
+<br><br>
+let [raindrops, whiskers, ...aFewOfMyFavoriteThings] = [<br>
+  "Raindrops on roses",<br>
+  "whiskers on kittens",<br>
+  "Bright copper kettles",<br>
+  "warm woolen mittens",<br>
+  "Brown paper packages tied up with strings"<br>
+]
+<br><br>
+console.log(raindrops); // "Raindrops on roses"<br>
+console.log(whiskers); // "whiskers on kittens"<br>
+console.log(aFewOfMyFavoriteThings); // ["Bright copper kettles", "warm woolen mittens", "Brown paper packages tied up with strings"]<br>
+<br><br>
+<b>What does the following code return/print?</b>
+<br><br>
+let numbers = [10, 20, 30];<br>
+[numbers[1], numbers[2]] = [numbers[2], numbers[1]]
+<br><br>
+console.log(numbers) // [10,30,20]
+
+    <script src = "destructuring.js"></script>
+</body>
+</html>
